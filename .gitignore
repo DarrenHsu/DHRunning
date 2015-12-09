@@ -1,0 +1,6 @@
+# Ignore Mac OS Local File
+.DS_Store
+
+# Xcode Local File
+xcshareddata
+xcuserdata

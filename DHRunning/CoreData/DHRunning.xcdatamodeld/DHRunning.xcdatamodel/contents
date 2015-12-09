@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13E28" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="RecordEntity" representedClassName="RecordEntity" syncable="YES">
+        <attribute name="avgSpeed" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="createTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="distance" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="endTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="maxSpeed" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="points" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="recordId" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="recordName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="rs_User" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserEntity" inverseName="rs_Record" inverseEntity="UserEntity" syncable="YES"/>
+    </entity>
+    <entity name="UserEntity" representedClassName="UserEntity" syncable="YES">
+        <attribute name="borthday" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="height" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sexy" optional="YES" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
+        <attribute name="weight" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
+        <relationship name="rs_Record" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="RecordEntity" inverseName="rs_User" inverseEntity="RecordEntity" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="RecordEntity" positionX="-272" positionY="9" width="128" height="193"/>
+        <element name="UserEntity" positionX="-81" positionY="65" width="128" height="133"/>
+    </elements>
+</model>
