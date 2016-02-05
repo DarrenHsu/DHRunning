@@ -53,6 +53,7 @@
 		8C6D2877191A0A2D00CD5D2A /* DHUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C6D2876191A0A2D00CD5D2A /* DHUserViewController.m */; };
 		8C76521119B7FFB900E1113B /* DHTriangleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C76521019B7FFB900E1113B /* DHTriangleView.m */; };
 		8C94235919AED70B00D3577A /* DHYAHOOWeatherInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C94235819AED70B00D3577A /* DHYAHOOWeatherInfo.m */; };
+		8CA77EFF1C64259A00DB8F34 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CA77EFE1C64259A00DB8F34 /* Launch Screen.storyboard */; };
 		8CD736EC191B4A5200BF3FA9 /* DHLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD736EB191B4A5200BF3FA9 /* DHLocation.m */; };
 		8CD736EF191B4A6100BF3FA9 /* DHWeatherLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD736EE191B4A6100BF3FA9 /* DHWeatherLocation.m */; };
 		8CD736F2191B4A6D00BF3FA9 /* DHWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD736F1191B4A6D00BF3FA9 /* DHWeather.m */; };
@@ -170,6 +171,7 @@
 		8C76521019B7FFB900E1113B /* DHTriangleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHTriangleView.m; sourceTree = "<group>"; };
 		8C94235719AED70B00D3577A /* DHYAHOOWeatherInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHYAHOOWeatherInfo.h; sourceTree = "<group>"; };
 		8C94235819AED70B00D3577A /* DHYAHOOWeatherInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHYAHOOWeatherInfo.m; sourceTree = "<group>"; };
+		8CA77EFE1C64259A00DB8F34 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		8CD736EA191B4A5200BF3FA9 /* DHLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHLocation.h; sourceTree = "<group>"; };
 		8CD736EB191B4A5200BF3FA9 /* DHLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHLocation.m; sourceTree = "<group>"; };
 		8CD736ED191B4A6100BF3FA9 /* DHWeatherLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHWeatherLocation.h; sourceTree = "<group>"; };
@@ -391,6 +393,7 @@
 				8C5F96A019107F56001BA3D6 /* main.m */,
 				8C5F96A219107F56001BA3D6 /* DHRunning-Prefix.pch */,
 				8C182A381910C9650012271F /* MainStoryboard_iPhone.storyboard */,
+				8CA77EFE1C64259A00DB8F34 /* Launch Screen.storyboard */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -665,7 +668,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = DHRunning;
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = DH;
 				TargetAttributes = {
 					8C5F96AE19107F56001BA3D6 = {
@@ -699,6 +702,7 @@
 				8C182A391910C9650012271F /* MainStoryboard_iPhone.storyboard in Resources */,
 				8C371C281921C8B3001175F9 /* GoogleMaps.bundle in Resources */,
 				8C5F969F19107F56001BA3D6 /* InfoPlist.strings in Resources */,
+				8CA77EFF1C64259A00DB8F34 /* Launch Screen.storyboard in Resources */,
 				8C5F96AA19107F56001BA3D6 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -831,6 +835,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -845,7 +850,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -877,7 +882,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -888,7 +893,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Darren Hsu (W45ZNX26E6)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Darren Hsu (VKSYBVAFT7)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -903,10 +908,11 @@
 					"$(SRCROOT)/../../MagicalRecord",
 				);
 				INFOPLIST_FILE = "DHRunning/DHRunning-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "tw.com.dh.running.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f8f3c674-670b-42b1-be09-a1545fdc0f37";
+				PROVISIONING_PROFILE = "bf58d499-5a8a-458c-8024-27017d8dfc87";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -916,7 +922,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Darren Hsu (W45ZNX26E6)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Darren Hsu (VKSYBVAFT7)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -931,10 +937,11 @@
 					"$(SRCROOT)/../../MagicalRecord",
 				);
 				INFOPLIST_FILE = "DHRunning/DHRunning-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "tw.com.dh.running.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f8f3c674-670b-42b1-be09-a1545fdc0f37";
+				PROVISIONING_PROFILE = "bf58d499-5a8a-458c-8024-27017d8dfc87";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -955,6 +962,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "DHRunningTests/DHRunningTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "tw.com.dh.running.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -973,6 +981,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DHRunning/DHRunning-Prefix.pch";
 				INFOPLIST_FILE = "DHRunningTests/DHRunningTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "tw.com.dh.running.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;

@@ -100,8 +100,8 @@ static DHWeather *weather = nil;
 }
 
 - (void) connectionDidFinishLoading:(NSURLConnection *)connection {
-//    NSString *str = [[NSString alloc] initWithData:_receiverData encoding:NSUTF8StringEncoding];
-//    NSLog(@"%@",str);
+    NSString *str = [[NSString alloc] initWithData:_receiverData encoding:NSUTF8StringEncoding];
+    NSLog(@"%@",str);
     switch ([((DHWeatherConnection *)connection) connectionType]) {
         case DHWeatherConnectionTypeLocation:
             [self processLocationData];
