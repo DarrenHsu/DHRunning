@@ -18,10 +18,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationBar.backgroundColor = [UIColor redColor];
+
+    self.navigationBar.barTintColor = [UIColor redColor];
     self.navigationBar.titleTextAttributes = @{NSFontAttributeName : [UIFont systemFontOfSize:24],
-                                               NSForegroundColorAttributeName : [UIColor redColor]};
-    self.navigationBar.tintColor = [UIColor redColor];
+                                               NSForegroundColorAttributeName : [UIColor whiteColor]};
+    self.navigationBar.tintColor = [UIColor whiteColor];
 }
 
 - (void)didReceiveMemoryWarning
@@ -29,10 +30,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-- (void) dealloc {
-    NSLog(@"%@ %@",NSStringFromClass([self class]),NSStringFromSelector(_cmd));
-}
-
 
 @end

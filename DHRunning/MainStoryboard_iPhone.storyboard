@@ -13,7 +13,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="upM-el-w2X">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.86274516580000005" green="0.83921575550000005" blue="0.82352948189999997" alpha="1" colorSpace="deviceRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="qFD-IE-UYm" kind="relationship" relationship="viewControllers" id="GxQ-iB-gCw"/>
