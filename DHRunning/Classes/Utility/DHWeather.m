@@ -16,7 +16,6 @@ static DHWeather *weather = nil;
 @interface DHWeather () <NSURLConnectionDelegate>
 
 @property (nonatomic, strong) DHWeatherLocation *weatherLocation;
-@property (nonatomic, strong) NSMutableData *receiverData;
 
 @end
 
@@ -63,9 +62,12 @@ static DHWeather *weather = nil;
     
     NSURL *URL = [[NSURL alloc] initWithString:urlStr];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:URL];
-    DHWeatherConnection *connection = [[DHWeatherConnection alloc] initWithRequest:request delegate:self];
-    [connection setConnectionType:DHWeatherConnectionTypeWeather];
-    [connection start];
+    NSURLSession *session = [NSURLSession new];
+    NSURLSessionTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        [self processWeatherData:data];
+    }];
+
+    [task resume];
 }
 
 - (void) requestYAHOOLocationWithLongitude:(CLLocationDegrees)lon latitude:(CLLocationDegrees)lat {
@@ -81,9 +83,12 @@ static DHWeather *weather = nil;
     NSString* encodedUrl = [urlStr stringByAddingPercentEncodingWithAllowedCharacters:NSCharacterSet.URLQueryAllowedCharacterSet];
     NSURL *URL = [[NSURL alloc] initWithString:encodedUrl];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:URL];
-    DHWeatherConnection *connection = [[DHWeatherConnection alloc] initWithRequest:request delegate:self];
-    [connection setConnectionType:DHWeatherConnectionTypeLocation];
-    [connection start];
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        [self processLocationData:data];
+    }];
+
+    [task resume];
 }
 
 #pragma mark - DHWeatherLocationDelegate Methods
@@ -91,32 +96,13 @@ static DHWeather *weather = nil;
     [self requestYAHOOLocationWithLongitude:lon latitude:lat];
 }
 
-#pragma mark - NSURLConnectionDelegate Methods
-- (void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-    if (!_receiverData)
-        _receiverData = [NSMutableData new];
+#pragma mark - Process dATA
+- (void) processLocationData:(NSData *) data {
+//    NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+//    NSLog(@"%@",string);
 
-    [_receiverData appendData:data];
-}
-
-- (void) connectionDidFinishLoading:(NSURLConnection *)connection {
-    NSString *str = [[NSString alloc] initWithData:_receiverData encoding:NSUTF8StringEncoding];
-    NSLog(@"%@",str);
-    switch ([((DHWeatherConnection *)connection) connectionType]) {
-        case DHWeatherConnectionTypeLocation:
-            [self processLocationData];
-            break;
-        case DHWeatherConnectionTypeWeather:
-            [self processWeatherData];
-            break;
-        default:
-            break;
-    }
-}
-
-- (void) processLocationData {
     NSError *e = nil;
-    NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:_receiverData
+    NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:data
                                                          options:NSJSONReadingMutableContainers
                                                            error:&e];
     
@@ -133,16 +119,15 @@ static DHWeather *weather = nil;
     
     [self setLang:lang];
     [self setWeoid:wid];
-    [self setReceiverData:nil];
     
     [self requestYAHOOWeatherWithWEOID:_weoid];
 }
 
-- (void) processWeatherData {
+- (void) processWeatherData:(NSData *) data {
 //    NSString *string = [[NSString alloc] initWithData:_receiverData encoding:NSUTF8StringEncoding];
 //    NSLog(@"%@",string);
     
-    TBXML *xml = [[TBXML alloc] initWithXMLData:_receiverData];
+    TBXML *xml = [[TBXML alloc] initWithXMLData:data];
 
     TBXMLElement *rss = [xml rootXMLElement];
     if (!rss) return;
@@ -198,11 +183,6 @@ static DHWeather *weather = nil;
     }
     
     NSLog(@"%@",info);
-    [self setReceiverData:nil];
 }
-
-@end
-
-@implementation DHWeatherConnection
 
 @end

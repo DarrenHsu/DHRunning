@@ -20,14 +20,3 @@
 - (void) stopWeatherData;
 
 @end
-
-typedef enum {
-    DHWeatherConnectionTypeLocation,
-    DHWeatherConnectionTypeWeather
-} DHWeatherConnectionType;
-
-@interface DHWeatherConnection : NSURLConnection
-
-@property (nonatomic) DHWeatherConnectionType connectionType;
-
-@end
