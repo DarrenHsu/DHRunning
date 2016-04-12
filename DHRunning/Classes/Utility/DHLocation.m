@@ -94,6 +94,8 @@ static DHLocation *locationObject = nil;
 
 - (void) cumulativeTime {
 	self.cumulativeTimeInternal++;
+
+    NSLog(@"%zd",self.cumulativeTimeInternal);
 	
 	if (self.currentSpeed > 0 && self.tempLocation) {
 		NSDate *date = [self.tempLocation timestamp];
@@ -155,6 +157,14 @@ static DHLocation *locationObject = nil;
         [self.locationManager setDistanceFilter:kDistanceFilter];
         [self.locationManager requestWhenInUseAuthorization];
         [self.locationManager requestAlwaysAuthorization];
+
+        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8) {
+            [self.locationManager requestAlwaysAuthorization];
+        }
+
+        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9) {
+            self.locationManager.allowsBackgroundLocationUpdates = YES;
+        }
 	}
 	
 	[self.locationManager startUpdatingLocation];
