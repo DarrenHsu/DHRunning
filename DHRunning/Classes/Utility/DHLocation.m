@@ -94,8 +94,6 @@ static DHLocation *locationObject = nil;
 
 - (void) cumulativeTime {
 	self.cumulativeTimeInternal++;
-
-    NSLog(@"%zd",self.cumulativeTimeInternal);
 	
 	if (self.currentSpeed > 0 && self.tempLocation) {
 		NSDate *date = [self.tempLocation timestamp];
