@@ -94,12 +94,14 @@
     [_mapBaseView addSubview:_mapView];
     
     [DHMap drawMap:_mapView coordinates:[_recordEntity unarchivedPoints]];
-    
+
     DHLocationCoordinate *shcoordinate = [[_recordEntity unarchivedPoints] firstObject];
     [DHMap drawMap:_mapView markerColor:[UIColor colorWithRed:0.f green:1.f blue:0.f alpha:1.f] title:@"Start" snippet:nil latitude:shcoordinate.latitude longtitude:shcoordinate.longitude];
-    
+
+    UIImage *header = [UIImage imageNamed:@"Header"];
+
     DHLocationCoordinate *ehcoordinate = [[_recordEntity unarchivedPoints] lastObject];
-    [DHMap drawMap:_mapView markerColor:[UIColor colorWithRed:0.f green:.5f blue:0.f alpha:1.f] title:@"End" snippet:nil latitude:ehcoordinate.latitude longtitude:ehcoordinate.longitude];
+    [DHMap drawMap:_mapView markIcon:header title:@"End" snippet:nil latitude:ehcoordinate.latitude longtitude:ehcoordinate.longitude];
 }
 
 - (void)didReceiveMemoryWarning {
