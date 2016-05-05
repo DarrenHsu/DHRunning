@@ -12,13 +12,13 @@ Compass
 
 History
 
-1, Show all history,
+1, Show all history.
 
-2. Click history can get more detailed route information.
+2, Click history can get more detailed route information.
 
 User
 
-1, The current use of this app user information
+1, The current use of this app user information.
 
 GMap
 
