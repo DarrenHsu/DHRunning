@@ -22,6 +22,6 @@ User
 
 GMap
 
-1, Shows the current location google map.
+1, Display current location in Google Map.
 
 2, Will be displayed when the user moves between route on the map traveling.
