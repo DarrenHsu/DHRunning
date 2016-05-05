@@ -13,6 +13,7 @@ Compass
 History
 
 1, Show all history,
+
 2. Click history can get more detailed route information.
 
 User
