@@ -3,6 +3,7 @@
 Record
 
 1, Which is a record of your distance traveled between, time, speed, and other related information.
+
 2, To provide current weather information, but Yahoo API has been revised, it is impossible to get information.
 
 Compass
@@ -12,6 +13,7 @@ Compass
 History
 
 1, Show all history,
+
 2. Click history can get more detailed route information.
 
 User
@@ -21,4 +23,5 @@ User
 GMap
 
 1, Shows the current location google map.
+
 2, Will be displayed when the user moves between route on the map traveling.
