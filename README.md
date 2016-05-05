@@ -1,6 +1,6 @@
 # DHRunning
 
-Record
+Record 
 
 1, Which is a record of your distance traveled between, time, speed, and other related information.
 
