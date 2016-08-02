@@ -6,14 +6,17 @@
 //  Copyright (c) 2014年 DH. All rights reserved.
 //
 
+@import CoreLocation;
+
 #import "DHRecordViewController.h"
 #import "DHLocation.h"
 #import "DHYAHOOWeatherInfo.h"
 #import "DHRunningAppDelegate.h"
 #import "DHWeather.h"
 
-
 @interface DHRecordViewController () <DHLocationDelegate>
+
+@property (nonatomic, strong) CLGeocoder *geocoder;
 
 @end
 
@@ -91,7 +94,10 @@
     } else if (object.appCurrentActionTag == KATStopRecoding) {
         [_playButton setImage:[UIImage imageNamed:@"AP-02_menu_r1_c1.png"] forState:UIControlStateNormal];
     }
-    
+
+    [_cityLabel setText:object.locality];
+    [_countryLabel setText:object.countryName];
+
     [_distanceLabel setText:[NSString stringWithFormat:@"%.01f",object.cumulativeKM]];
     [_currentSpeedLabel setText:[NSString stringWithFormat:@"%.01f",object.currentSpeed]];
     [_heightLabel setText:[NSString stringWithFormat:@"%.01f",object.altitude]];

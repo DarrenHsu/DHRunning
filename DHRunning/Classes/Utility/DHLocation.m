@@ -113,7 +113,7 @@ static DHLocation *locationObject = nil;
 
 - (void) setupDefaultValue {
     if (_coordinates) [_coordinates removeAllObjects];
-    
+
     [self setCurrentLocation:nil];
     [self.coordinates removeAllObjects];
     [self setCoordinates:[NSMutableArray new]];
@@ -130,6 +130,8 @@ static DHLocation *locationObject = nil;
     _tempMS = 0;
     _tempKM = 0;
 	_gpsUploadCount = 0;
+    _countryName = nil;
+    _locality = nil;
 }
 
 - (void) startWithLocationName:(NSString *) name locationId:(NSString *) lid {
@@ -244,7 +246,17 @@ static DHLocation *locationObject = nil;
 	}else {
         [self setLocationOn:NO];
 	}
-    
+
+    if (!_countryName && !_locality) {
+        CLGeocoder * geoCoder = [[CLGeocoder alloc] init];
+        [geoCoder reverseGeocodeLocation:newLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+            for (CLPlacemark *placemark in placemarks) {
+                _countryName = placemark.country;
+                _locality = placemark.locality;
+            }
+        }];
+    }
+
     for (id<DHLocationDelegate> delegate in _delegates) {
         if ([delegate respondsToSelector:@selector(receiverChangeDHLocation:)]) {
             [delegate receiverChangeDHLocation:self];

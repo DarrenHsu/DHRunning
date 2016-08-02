@@ -19,6 +19,9 @@ typedef enum{
 
 @interface DHLocation : NSObject <CLLocationManagerDelegate>
 
+@property (nonatomic, strong) NSString *        countryName;
+@property (nonatomic, strong) NSString *        locality;
+
 @property (nonatomic, strong) NSMutableArray *  delegates;
 @property (nonatomic, assign) kActionTag        appCurrentActionTag;
 @property (nonatomic, assign) BOOL              locationOn;

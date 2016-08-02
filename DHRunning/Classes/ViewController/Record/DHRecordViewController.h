@@ -20,6 +20,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *avgSpeedLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *startLocationImageView;
 @property (nonatomic, weak) IBOutlet UIButton *playButton;
+@property (nonatomic, weak) IBOutlet UILabel *countryLabel;
 @property (nonatomic, weak) IBOutlet UILabel *cityLabel;
 @property (nonatomic, weak) IBOutlet UILabel *tempLabel;
 @property (nonatomic, weak) IBOutlet UILabel *humidityLabel;
