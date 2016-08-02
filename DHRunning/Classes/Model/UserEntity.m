@@ -30,7 +30,7 @@
 		else
 			return userPre;
 	} else
-		return pre ? pre : [NSPredicate predicateWithValue:YES];
+		return pre ? pre : [NSPredicate predicateWithValue:NO];
 }
 
 @end
