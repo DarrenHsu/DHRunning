@@ -109,6 +109,8 @@ static DHWeather *weather = nil;
     if (!JSON) return;
     NSDictionary *query = [JSON objectForKey:@"query"];
     NSDictionary *results = [query objectForKey:@"results"];
+    if ([results isKindOfClass:[NSNull class]]) return;
+    
     NSDictionary *result = [results objectForKey:@"Result"];
 
     if (!result) return;
