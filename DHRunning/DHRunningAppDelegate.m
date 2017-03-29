@@ -22,7 +22,8 @@ static NSString * const kRecipesStoreName = @"DHRunning.sqlite";
 
 @implementation DHRunningAppDelegate
 
-+ (DHRunningAppDelegate *) mainAppDelegate {
++ (DHRunningAppDelegate *) mainAppDelegate
+{
     return (DHRunningAppDelegate *)[[UIApplication sharedApplication] delegate];
 }
 
