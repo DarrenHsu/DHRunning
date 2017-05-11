@@ -673,7 +673,7 @@
 				TargetAttributes = {
 					8C5F968E19107F56001BA3D6 = {
 						DevelopmentTeam = 796PUW3YDR;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					8C5F96AE19107F56001BA3D6 = {
 						TestTargetID = 8C5F968E19107F56001BA3D6;
@@ -928,8 +928,8 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "tw.com.dh.running.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "a0ae3365-43f0-45f2-89b9-df8736ca5227";
+				PROVISIONING_PROFILE_SPECIFIER = iOS_Development;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -960,8 +960,8 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "tw.com.dh.running.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "a0ae3365-43f0-45f2-89b9-df8736ca5227";
+				PROVISIONING_PROFILE_SPECIFIER = iOS_Development;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
