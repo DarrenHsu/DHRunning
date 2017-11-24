@@ -30,7 +30,7 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
     
-    [GMSServices provideAPIKey:@"AIzaSyBhtVzuRtWDJhEhTgXQ495JsW5D9j-4QXw"];
+    [GMSServices provideAPIKey:@"AIzaSyBRA9y8POa8I4-NLr21c9dCi3phh5PVGLE"];
     
     GMSCameraPosition *camera = nil;
     
@@ -101,6 +101,7 @@
 
 - (void) receiverChangeDHLocation:(DHLocation *) location {
     if (!location.currentLocation) return;
+    
     [_mapView clear];
     
     CLLocationCoordinate2D coordinate = location.currentLocation.coordinate;
